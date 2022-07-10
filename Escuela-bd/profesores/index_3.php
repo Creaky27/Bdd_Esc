@@ -1,7 +1,6 @@
 <?php
-    require_once("../Lib/connect.php");
-    $consulta = "SELECT * FROM profesores";
-    $resultado = mysqli_query($connect, $consulta);
+    require_once("../Lib/functions.php");
+    $profesor = get_all_profesores($connect);
 ?>
 <!DOCTYPE html>
 <html lang="es-MX">
@@ -12,7 +11,7 @@
     <title>Profesores Unid</title>
 </head>
 <body>
-<h1>Profesores Unid</h1>
+<h1>Profesores Unid<small><a href="#">Añadir Profesor</a></small></h1>
     <table>
         <thead>
             <tr>
@@ -26,7 +25,7 @@
         </thead>
         <tbody>
             <?php
-                while ($fila = mysqli_fetch_array($resultado)) {
+                while ($fila = mysqli_fetch_array($profesor)) {
             ?>
             <tr>
                 <td><?php echo $fila['ID_prof'];?></td>
@@ -35,6 +34,9 @@
                 <td><?php echo $fila['Teléfono'];?></td>
                 <td><?php echo $fila['Email'];?></td>
                 <td><?php echo $fila['STATUS'];?></td>
+                <td> <a href= "detail.php?ID_prof=<?php echo $fila['ID_prof'] ?>" >Detalle</a></td>
+                <td> <a href= "insert.php?ID_prof=<?php echo $fila['ID_prof'] ?>">Editar</a></td>
+                <td> <a href= "update.php?ID_prof=<?php echo $fila['ID_prof'] ?>">Eliminar</a></td>
             </tr>
             <?php
             }
