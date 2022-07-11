@@ -12,7 +12,7 @@ $alumno = get_all_alumnos($connect);
 </head>
 <body>
     <h1>Alumnos<small><a href="../alumnos/insert.php">Crear Alumno</a></small></h1>
-    <table>
+    <table border="1">
         <thead>
             <tr>
                 <th>ID</th>
@@ -33,13 +33,13 @@ $alumno = get_all_alumnos($connect);
                 <td><?php echo $fila['ID'];?></td>
                 <td><?php echo $fila['Nombre'];?></td>
                 <td><?php echo $fila['Apellido'];?></td>
-                <td><?php echo $fila['Teléfono'];?></td>
+                <td><?php echo $fila['Telefono'];?></td>
                 <td><?php echo $fila['Email'];?></td>
                 <td><?php echo $fila['Cuatrimestre'];?></td>
                 <td><?php echo $fila['Licenciatura'];?></td>
                 <td><?php echo $fila['Estatus'];?></td>
-                <td> <a href= "detail.php?ID=<?php echo $fila['ID']; ?>">Detalle</a></td>
-                <td> <a href= "update.php?ID=<?php echo $fila['ID']; ?>">Editar</a></td>
+                <td> <a href= "detail.php?ID=<?php echo $fila['ID'] ?>">Detalle</a></td>
+                <td> <a href= "update.php?ID=<?php echo $fila['ID'] ?>">Editar</a></td>
                 <td> <a href= "delete.php?ID=<?php echo $fila['ID'] ?>">Eliminar</a></td>
             </tr>
             <?php

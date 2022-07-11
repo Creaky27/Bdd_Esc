@@ -14,27 +14,27 @@ require_once("../Lib/functions.php");
     <form action = "insert_query.php" method= "post">
     <div class= "datos-alumno">
         <label for="name">Ingresar el Nombre:</label>
-        <input type="text" placeholder="Alumno" maxlength="30" nombre="name" id="name">
+        <input type="text" placeholder="Alumno" name="name" id="name">
         <br><br>
     </div>
     <div class= "datos-alumno">
         <label for="apll">Ingresar Apellido:</label>
-        <input type="text" placeholder="Apellido" maxlength="30" nombre="apll" id="apll">
+        <input type="text" placeholder="Apellido" name="apll" id="apll">
         <br><br>
     </div>
     <div class= "datos-alumno">
         <label for="tel">Ingresar Teléfono:</label>
-        <input type="text" placeholder="Número" maxlength="10" nombre="tel" id="tel">
+        <input type="text" placeholder="Número" name="tel" id="tel">
         <br><br>
     </div>
     <div class= "datos-alumno">
         <label for="email">Ingresar Email:</label>
-        <input type="text" placeholder="nombre@unid.com" maxlength="30" nombre="email" id="email">
+        <input type="text" placeholder= "nombre@unid.com" name="email" id="email">
         <br><br>
     </div>
     <div class= "datos-alumno">
         <label for="lic">Ingresar Licenciatura:</label>
-        <input type="text" placeholder="Licenciatura" maxlength="30" nombre="lic" id="lic">
+        <input type="text" placeholder="Licenciatura" name="lic" id="lic">
         <br><br>
     </div>
     <div class= "datos-alumno">
@@ -54,7 +54,7 @@ require_once("../Lib/functions.php");
     </div>
     <div class= "datos-alumno">
         <label for="sts">STATUS:</label>
-        <input type="text" placeholder="ESTATUS" maxlength="10" nombre="sts" id="sts">
+        <input type="text" placeholder="ESTATUS" name="sts" id="sts">
         <br><br>
     </div>
 

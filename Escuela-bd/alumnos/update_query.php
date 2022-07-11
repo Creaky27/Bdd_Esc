@@ -10,6 +10,8 @@ $cuat = $_POST['cuat'];
 $sts = $_POST['sts'];
 $ID = $_POST['id'];
 
+
+
 update_alumnos($name, $apll, $tel, $email, $lic, $cuat, $sts, $ID);
 
 header("Location: index.php");

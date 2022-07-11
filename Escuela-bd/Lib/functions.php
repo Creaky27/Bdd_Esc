@@ -11,6 +11,24 @@ function get_alumno($connect,$ID){
     $resultado = mysqli_query($connect, $consulta);
     return $resultado;
 }
+//FORMULARIO alumnos
+function insertar_alumnos($name, $apll, $tel, $email, $lic, $cuat, $sts){
+    global $connect;
+    $consulta = "INSERT INTO alumnos (Nombre, Apellido, Telefono, Email, Licenciatura, Cuatrimestre, Estatus) values('$name', '$apll', '$tel', '$email', '$lic', '$cuat', '$sts')";
+    $resultado = mysqli_query($connect, $consulta);
+    //return $resultado)
+}
+function update_alumnos($name, $apll, $tel, $email, $lic, $cuat, $sts, $ID){
+    global $connect;
+    $consulta = "UPDATE alumnos SET Nombre='$name', Apellido = '$apll', Teléfono= '$tel', Email='$email', Licenciatura='$lic', Cuatrimestre= '$cuat', Estatus='$sts' WHERE ID= $ID";
+    $resultado = mysqli_query($connect, $consulta);
+}
+function delete_alumnos($ID){
+    global $connect;
+    $consulta = "DELETE FROM alumnos WHERE ID= $ID";
+    $resultado = mysqli_query($connect, $consulta);
+}
+
 //MATERIAS
 function get_all_materias($connect){
     $consulta = "SELECT * FROM materias";
@@ -22,6 +40,7 @@ function get_materia($connect,$ID){
     $resultado = mysqli_query($connect, $consulta);
     return $resultado;
 }
+
 //PROFESORES
 function get_all_profesores($connect){
     $consulta = "SELECT * FROM profesores";
@@ -33,17 +52,5 @@ function get_profesor($connect, $ID_prof){
     $resultado = mysqli_query($connect, $consulta);
     return $resultado; 
 }
-//FORMULARIO
-function insertar_alumnos($name, $apll, $tel, $email, $lic, $cuat, $sts){
-    global $connect;
-    $consulta = "INSERT INTO alumnos(Nombre, Apellido, Teléfono, Email, Licenciatura, Cuatrimestre, Estatus) values('$name', '$apll', '$tel', '$email', '$lic', '$cuat', '$sts')";
-    $resultado = mysqli_query($connect, $consulta);
-    //return $resultado;
-}
-function update_alumnos($name, $apll, $tel, $email, $lic, $cuat, $sts, $ID){
-    global $connect;
-    $consulta = "UPDATE alumnos SET Nombre='$name', Apellido = '$apll', Teléfono= '$tel', Email='$email', Licenciatura='$lic', Cuatrimestre= '$cuat', Estatus='$sts' WHERE ID= $ID";
-    $resultado = mysqli_query($connect, $consulta);
 
-}
 ?>

@@ -13,7 +13,7 @@ $alumno = mysqli_fetch_array($resultado);
     <title>Inscripción Alumnos</title>
 </head>
 <body>
-    <h1>Ingrese datos del Nuevo Alumno <small><a href="../alumnos/index.php">Regresar</a></small></h1>
+    <h1>Actualice datos del Alumno <small><a href="../alumnos/index.php">Regresar</a></small></h1>
     <form action = "update_query.php" method= "post">
     <div class= "datos-alumno">
         <label for="name">Ingresar el Nombre:</label>
@@ -28,7 +28,7 @@ $alumno = mysqli_fetch_array($resultado);
     </div>
     <div class= "datos-alumno">
         <label for="tel">Ingresar Teléfono:</label>
-        <input type="text" placeholder="Número" maxlength="10" name="tel" id="tel" value="<?php echo $alumno['Teléfono']; ?>">
+        <input type="text" placeholder="Número" name="tel" id="tel" value="<?php echo $alumno['Teléfono']; ?>">
         <br><br>
     </div>
     <div class= "datos-alumno">
@@ -62,7 +62,7 @@ $alumno = mysqli_fetch_array($resultado);
         <br><br>
     </div>
 
-        <input type="submit" name="submit" value="Registrar">
+        <input type="submit" name="submit" value="Actualizar">
 
     </form>
 </body>
