@@ -11,8 +11,8 @@ $materia = get_all_materias($connect);
     <title>Materias</title>
 </head>
 <body>
-<h1>Materias<small><a href="#">Agregar materia</a></small></h1>
-    <table>
+<h1>Materias<small><a href="../materias/insert.php">Agregar materia</a></small></h1>
+    <table border="1">
         <thead>
             <tr>
                 <th>ID</th>
@@ -30,9 +30,9 @@ $materia = get_all_materias($connect);
                 <td><?php echo $fila['Nombre_Materia'];?></td>
                 <td><?php echo $fila['Cuatrimestre'];?></td>
                 <td><?php echo $fila['Licenciatura'];?></td>
-                <td> <a href= "detail_mat.php?ID=<?php echo $fila['ID']; ?>">Detalle</a></td>
-                <td> <a href= "#">Editar</a></td>
-                <td> <a href= "#">Eliminar</a></td>
+                <td> <a href= "detail_mat.php?ID=<?php echo $fila['ID'] ?>">Detalle</a></td>
+                <td> <a href= "update.php?ID=<?php echo $fila['ID'] ?>">Editar</a></td>
+                <td> <a href= "delete.php?ID=<?php echo $fila['ID'] ?>">Eliminar</a></td>
             </tr>
             <?php
             }

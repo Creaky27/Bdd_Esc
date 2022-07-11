@@ -13,7 +13,7 @@ $materia = mysqli_fetch_array($resultado);
     <title>Materias</title>
 </head>
 <body>
-    <h1>Materias <?php echo $materia['Nombre_Materia'];?> <small><a href="../materias/">Regresar</a></small></h1>
+    <h1>Materias <?php echo $materia['Nombre_Materia'];?> <small><a href="../materias/index_2.php">Regresar</a></small></h1>
     <table>
         <thead>
             <tr>

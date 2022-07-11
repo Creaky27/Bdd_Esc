@@ -40,7 +40,23 @@ function get_materia($connect,$ID){
     $resultado = mysqli_query($connect, $consulta);
     return $resultado;
 }
-
+//FORMULARIO materias
+function insertar_materias($ID, $MATERIA, $cuat, $lic){
+    global $connect;
+    $consulta = "INSERT INTO materias (ID, Nombre_Materia, Cuatrimestre,  Licenciatura) values('$ID', '$MATERIA', '$cuat', '$lic')";
+    $resultado = mysqli_query($connect, $consulta);
+    //return $resultado)
+}
+function update_materias($ID, $MATERIA, $cuat, $lic){
+    global $connect;
+    $consulta = "UPDATE materias SET ID='$ID', Nombre_Materia = '$MATERIA', Cuatrimestre = '$cuat', Licenciatura = '$lic' WHERE ID= $ID";
+    $resultado = mysqli_query($connect, $consulta);
+}
+function delete_materias($ID){
+    global $connect;
+    $consulta = "DELETE FROM materias WHERE ID= $ID";
+    $resultado = mysqli_query($connect, $consulta);
+}
 //PROFESORES
 function get_all_profesores($connect){
     $consulta = "SELECT * FROM profesores";
