@@ -12,6 +12,7 @@ $alumno = get_all_alumnos($connect);
 </head>
 <body>
     <h1>Alumnos<small><a href="../alumnos/insert.php">Crear Alumno</a></small></h1>
+    <h4><a href="../index_pr.php">Regresar</a></h4>
     <table border="1">
         <thead>
             <tr>

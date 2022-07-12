@@ -11,28 +11,34 @@ require_once("../Lib/functions.php");
 </head>
 <body>
     <h1>Ingrese datos del Profesor<small><a href="../profesores/index_3.php">Regresar </a><small></h1>
-    <form action= "update_prof.php" method="post">
+    <form action= "insert_query.php" method="post">
         <div class="datos_profesor">
-            <label for="name_prof">Ingresar Nombre:</label>
-            <input type="text" placeholder="Alumno" maxlength="30" nombre="name_prof" id="nom_prof">
+            <label for="name">Ingresar Nombre:</label>
+            <input type="text" placeholder="Profesor" name="name" id="name">
             <br><br>
         </div>
         
         <div class="datos_profesor">
-            <label for="apll_prof">Ingresar Apellido:</label>
-            <input type="text" placeholder="Apellido" maxlength="30" nombre="apll_prof" id="apll_prof">
+            <label for="apll">Ingresar Apellido:</label>
+            <input type="text" placeholder="Apellido" name="apll" id="apll">
             <br><br>
         </div>
         
         <div class="datos_profesor">
-            <label for="tel_prof">Ingresar Teléfono:</label>
-            <input type="text" placeholder="Número" maxlength="10" nombre="tel_prof" id="tel_prof">
+            <label for="tel">Ingresar Teléfono:</label>
+            <input type="text" placeholder="Número" name="tel" id="tel">
             <br><br>
         </div>
 
         <div class="datos_profesor">
-            <label for="email_prof">Ingresar Email:</label>
-            <input type="text" placeholder="nombre@unid.com" maxlength="30" nombre="email_prof" id="email_prof">
+            <label for="email">Ingresar Email:</label>
+            <input type="text" placeholder="nombre@unid.com" name="email" id="email">
+            <br><br>
+        </div>
+
+        <div class="datos_profesor">
+            <label for="sts">Ingresar Estatus:</label>
+            <input type="text" placeholder="estatus" name="sts" id="sts">
             <br><br>
         </div>
         

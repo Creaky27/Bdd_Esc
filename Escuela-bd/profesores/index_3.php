@@ -11,16 +11,17 @@
     <title>Profesores Unid</title>
 </head>
 <body>
-<h1>Profesores Unid<small><a href="#">Añadir Profesor</a></small></h1>
-    <table>
+<h1>Profesores Unid<small><a href="../profesores/insert.php">Añadir Profesor</a></small></h1>
+<h4><a href="../index_pr.php">Regresar</a></h4>
+    <table border = "1">
         <thead>
             <tr>
-                <th>ID_prof</th>
+                <th>ID</th>
                 <th>Nombre</th>
                 <th>Apellidos</th>
                 <th>Teléfono</th>
                 <th>Email</th>
-                <th>STATUS</th>
+                <th>ESTATUS</th>
             </tr>
         </thead>
         <tbody>
@@ -28,15 +29,15 @@
                 while ($fila = mysqli_fetch_array($profesor)) {
             ?>
             <tr>
-                <td><?php echo $fila['ID_prof'];?></td>
+                <td><?php echo $fila['ID'];?></td>
                 <td><?php echo $fila['Nombre'];?></td>
                 <td><?php echo $fila['Apellidos'];?></td>
-                <td><?php echo $fila['Teléfono'];?></td>
+                <td><?php echo $fila['Telefono'];?></td>
                 <td><?php echo $fila['Email'];?></td>
-                <td><?php echo $fila['STATUS'];?></td>
-                <td> <a href= "detail.php?ID_prof=<?php echo $fila['ID_prof'] ?>" >Detalle</a></td>
-                <td> <a href= "insert.php?ID_prof=<?php echo $fila['ID_prof'] ?>">Editar</a></td>
-                <td> <a href= "update.php?ID_prof=<?php echo $fila['ID_prof'] ?>">Eliminar</a></td>
+                <td><?php echo $fila['ESTATUS'];?></td>
+                <td> <a href= "detail_prof.php?ID=<?php echo $fila['ID'] ?>">Detalle</a></td>
+                <td> <a href= "update.php?ID=<?php echo $fila['ID'] ?>">Editar</a></td>
+                <td> <a href= "delete.php?ID=<?php echo $fila['ID'] ?>">Eliminar</a></td>
             </tr>
             <?php
             }

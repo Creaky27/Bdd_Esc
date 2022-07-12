@@ -18,8 +18,8 @@ require_once("../Lib/functions.php");
         <br><br>
     </div>
     <div class= "datos-materia">
-        <label for="MATERIA">Ingrese Materia:</label>
-        <input type="text" placeholder="Materia" name="MATERIA" id="MATERIA">
+        <label for="mat">Ingrese Materia:</label>
+        <input type="text" placeholder="Materia" name="mat" id="mat">
         <br><br>
     </div>
     <div class= "datos-materia">

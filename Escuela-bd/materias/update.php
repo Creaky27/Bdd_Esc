@@ -21,8 +21,8 @@ $materia = mysqli_fetch_array($resultado);
         <br><br>
     </div>
     <div class= "datos-materia">
-        <label for="MATERIA">Ingrese Materia:</label>
-        <input type="text" placeholder="Materia" name="MATERIA" id="MATERIA" value="<?php echo $materia['Nombre_Materia']; ?>">
+        <label for="mat">Ingrese Materia:</label>
+        <input type="text" placeholder="Materia" name="mat" id="mat" value="<?php echo $materia['Materia']; ?>">
         <br><br>
     </div>
     <div class= "datos-materia">

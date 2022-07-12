@@ -1,7 +1,7 @@
 <?php
 require_once("../Lib/functions.php");
-$ID_prof = $_GET['ID_prof'];
-$resultado = get_profesor($connect, $ID_prof);
+$ID = $_GET['ID'];
+$resultado = get_profesor($connect, $ID);
 $profesor = mysqli_fetch_array($resultado);
 ?>
 <!DOCTYPE html>
@@ -14,10 +14,10 @@ $profesor = mysqli_fetch_array($resultado);
 </head>
 <body>
 <h1>Profesor Unid <?php echo $profesor['Apellidos']." ".$profesor['Nombre'];?> <small><a href="../profesores/index_3.php">Regresar</a></small></h1>
-    <table>
+    <table border = "1">
         <thead>
             <tr>
-                <th>ID_prof</th>
+                <th>ID</th>
                 <th>Nombre</th>
                 <th>Apellidos</th>
                 <th>Teléfono</th>
@@ -27,12 +27,12 @@ $profesor = mysqli_fetch_array($resultado);
         </thead>
         <tbody>
             <tr>
-                <td><?php echo $profesor['ID_prof'];?></td>
+                <td><?php echo $profesor['ID'];?></td>
                 <td><?php echo $profesor['Nombre'];?></td>
                 <td><?php echo $profesor['Apellidos'];?></td>
-                <td><?php echo $profesor['Teléfono'];?></td>
+                <td><?php echo $profesor['Telefono'];?></td>
                 <td><?php echo $profesor['Email'];?></td>
-                <td><?php echo $profesor['STATUS'];?></td>
+                <td><?php echo $profesor['ESTATUS'];?></td>
             </tr>
         </tbody>
     </table>

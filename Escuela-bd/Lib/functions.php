@@ -20,7 +20,7 @@ function insertar_alumnos($name, $apll, $tel, $email, $lic, $cuat, $sts){
 }
 function update_alumnos($name, $apll, $tel, $email, $lic, $cuat, $sts, $ID){
     global $connect;
-    $consulta = "UPDATE alumnos SET Nombre='$name', Apellido = '$apll', Teléfono= '$tel', Email='$email', Licenciatura='$lic', Cuatrimestre= '$cuat', Estatus='$sts' WHERE ID= $ID";
+    $consulta = "UPDATE alumnos SET Nombre='$name', Apellido = '$apll', Telefono= '$tel', Email='$email', Licenciatura='$lic', Cuatrimestre= '$cuat', Estatus='$sts' WHERE ID= $ID";
     $resultado = mysqli_query($connect, $consulta);
 }
 function delete_alumnos($ID){
@@ -28,7 +28,6 @@ function delete_alumnos($ID){
     $consulta = "DELETE FROM alumnos WHERE ID= $ID";
     $resultado = mysqli_query($connect, $consulta);
 }
-
 //MATERIAS
 function get_all_materias($connect){
     $consulta = "SELECT * FROM materias";
@@ -41,15 +40,15 @@ function get_materia($connect,$ID){
     return $resultado;
 }
 //FORMULARIO materias
-function insertar_materias($ID, $MATERIA, $cuat, $lic){
+function insertar_materias($ID, $mat, $cuat, $lic){
     global $connect;
-    $consulta = "INSERT INTO materias (ID, Nombre_Materia, Cuatrimestre,  Licenciatura) values('$ID', '$MATERIA', '$cuat', '$lic')";
+    $consulta = "INSERT INTO materias (ID, Materia, Cuatrimestre,  Licenciatura) values('$ID', '$mat', '$cuat', '$lic')";
     $resultado = mysqli_query($connect, $consulta);
     //return $resultado)
 }
-function update_materias($ID, $MATERIA, $cuat, $lic){
+function update_materias($ID, $mat, $cuat, $lic){
     global $connect;
-    $consulta = "UPDATE materias SET ID='$ID', Nombre_Materia = '$MATERIA', Cuatrimestre = '$cuat', Licenciatura = '$lic' WHERE ID= $ID";
+    $consulta = "UPDATE materias SET ID='$ID', Materia = '$mat', Cuatrimestre = '$cuat', Licenciatura = '$lic' WHERE ID= $ID";
     $resultado = mysqli_query($connect, $consulta);
 }
 function delete_materias($ID){
@@ -63,10 +62,26 @@ function get_all_profesores($connect){
     $resultado = mysqli_query($connect, $consulta);
     return $resultado;
 }
-function get_profesor($connect, $ID_prof){
-    $consulta = "SELECT * FROM profesores where ID_prof = $ID_prof";
+function get_profesor($connect, $ID){
+    $consulta = "SELECT * FROM profesores where ID = $ID";
     $resultado = mysqli_query($connect, $consulta);
     return $resultado; 
 }
-
+//FORMULARIO profesores
+function insertar_profesores($name, $apll, $tel, $email, $sts){
+    global $connect;
+    $consulta = "INSERT INTO profesores (Nombre, Apellidos, Telefono, Email, ESTATUS) values('$name', '$apll', '$tel', '$email', '$sts')";
+    $resultado = mysqli_query($connect, $consulta);
+    //return $resultado)
+}
+function update_profesores($name, $apll, $tel, $email, $sts){
+    global $connect;
+    $consulta = "UPDATE profesores SET Nombre = '$name', Apellidos = '$apll', Telefono = '$tel', Email = '$email', ESTATUS = '$sts' WHERE ID = '$ID'";
+    $resultado = mysqli_query($connect, $consulta);
+}
+function delete_profesores($ID){
+    global $connect;
+    $consulta = "DELETE FROM profesores WHERE ID= $ID";
+    $resultado = mysqli_query($connect, $consulta);
+}
 ?>
