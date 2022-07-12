@@ -11,7 +11,7 @@
     <title>Profesores Unid</title>
 </head>
 <body>
-<h1>Profesores Unid<small><a href="../profesores/insert.php">Añadir Profesor</a></small></h1>
+<h1>Profesores Unid<small><a href="../profesores/formulario.php">Añadir Profesor</a></small></h1>
 <h4><a href="../index_pr.php">Regresar</a></h4>
     <table border = "1">
         <thead>
