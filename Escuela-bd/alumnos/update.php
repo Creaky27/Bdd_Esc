@@ -28,7 +28,7 @@ $alumno = mysqli_fetch_array($resultado);
     </div>
     <div class= "datos-alumno">
         <label for="tel">Ingresar Teléfono:</label>
-        <input type="text" placeholder="Número" name="tel" id="tel" value="<?php echo $alumno['Teléfono']; ?>">
+        <input type="text" placeholder="Número" name="tel" id="tel" value="<?php echo $alumno['Telefono']; ?>">
         <br><br>
     </div>
     <div class= "datos-alumno">

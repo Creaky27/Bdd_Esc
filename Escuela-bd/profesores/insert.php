@@ -1,13 +1,13 @@
 <?php
 require_once("../Lib/functions.php");
 
-$nameP = $_POST['nameP'];
-$apllP = $_POST['apllP'];
-$telP = $_POST['telP'];
-$emailP = $_POST['emailP'];
-$stsP = $_POST['stsP']
+$name = $_POST['name'];
+$apll = $_POST['apll'];
+$tel = $_POST['tel'];
+$email = $_POST['email'];
+$sts = $_POST['sts'];
 
-insert_profesor($nameP, $apllP, $telP, $emailP, $stsP);
+insert_profesor($name, $apll, $tel, $email, $sts);
 
-header ("Location : ../profesores/index_3.php")
+header ("Location:index_3.php")
 ?>

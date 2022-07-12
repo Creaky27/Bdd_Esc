@@ -12,15 +12,15 @@ function get_alumno($connect,$ID){
     return $resultado;
 }
 //FORMULARIO alumnos
-function insertar_alumnos($nameP, $apllP, $telP, $emailP, $stsP, $cuat, $sts){
+function insertar_alumnos($name, $apll, $tel, $email, $cuat, $sts){
     global $connect;
-    $consulta = "INSERT INTO alumnos (Nombre, Apellido, Telefono, Email, Licenciatura, Cuatrimestre, Estatus) values('$nameP', '$apllP', '$telP', emailPil'stsP$lic', '$cuat', '$sts')";
+    $consulta = "INSERT INTO alumnos (Nombre, Apellido, Telefono, Email, Licenciatura, Cuatrimestre, Estatus) values('$name', '$apll', '$tel','$email', '$lic', '$cuat', '$sts')";
     $resultado = mysqli_query($connect, $consulta);
     //return $resultado)
 }
-function update_alumnos($nameP, $apllP, $telP, $emailP, $stsP, $cuat, $sts, $ID){
+function update_alumnos($name, $apll, $tel, $email, $lic, $cuat, $sts, $ID){
     global $connect;
-    $consulta = "UPDATE alumnos SET Nombre='$nameP', Apellido = '$apllP', Telefono= '$telP', emailP='$stsPil', Licenciatura='$lic', Cuatrimestre= '$cuat', Estatus='$sts' WHERE ID= $ID";
+    $consulta = "UPDATE alumnos SET Nombre='$name', Apellido = '$apll', Telefono= '$tel', Email='$email', Licenciatura='$lic', Cuatrimestre= '$cuat', Estatus='$sts' WHERE ID= $ID";
     $resultado = mysqli_query($connect, $consulta);
 }
 function delete_alumnos($ID){
@@ -68,17 +68,19 @@ function get_profesor($connect, $ID){
     return $resultado; 
 }
 //FORMULARIO profesores
-function insert_profesor($nameP, $apllP, $telP, $emailP, $stsP){
+function insert_profesor($name, $apll, $tel, $email, $sts){
     global $connect;
-    $consulta = "INSERT INTO profesores(Nombre, Apellidos, Telefono, Email, ESTATUS) values('$nameP', '$apllP', '$telP', '$emailP', $stsP')";
+    $consulta = "INSERT INTO profesores(Nombre, Apellidos, Telefono, Email, ESTATUS) values('$name', '$apll', '$tel', '$email', '$sts')";
     $resultado = mysqli_query($connect, $consulta);
     //return $resultado)
 }
-function update_profesores($nameP, $apllP, $telP, $emailP, $stsP){
+
+function update_profesores($name, $apll, $tel, $email, $sts, $ID){
     global $connect;
-    $consulta = "UPDATE profesores SET Nombre = '$nameP', Apellidos = '$apllP', Telefono = '$telP', Email = '$emailP', ESTATUS = '$stsP' WHERE ID = '$ID'";
+    $consulta = "UPDATE profesores SET Nombre='$name', Apellidos = '$apll', Telefono= '$tel', Email='$email', Estatus='$sts' WHERE ID= $ID";
     $resultado = mysqli_query($connect, $consulta);
 }
+
 function delete_profesores($ID){
     global $connect;
     $consulta = "DELETE FROM profesores WHERE ID= $ID";

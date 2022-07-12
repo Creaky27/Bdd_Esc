@@ -11,35 +11,35 @@ require_once("../Lib/functions.php");
 </head>
 <body>
     <h1>Ingrese datos del Profesor<small><a href="../profesores/index_3.php">Regresar </a><small></h1>
-    <form action= "../profesores/insert.php" method="post">
+    <form action= "insert.php" method="post">
 
         <div class="datos_profesor">
-            <label for="nameP">Ingresar Nombre:</label>
-            <input type="text" placeholder="Profesor" name="nameP" id="nameP">
+            <label for="name">Ingresar Nombre:</label>
+            <input type="text" placeholder="Profesor" name="name" id="name">
             <br><br>
         </div>
         
         <div class="datos_profesor">
-            <label for="apllP">Ingresar Apellido:</label>
-            <input type="text" placeholder="Apellido" name="apllP" id="apllP">
+            <label for="apll">Ingresar Apellido:</label>
+            <input type="text" placeholder="Apellido" name="apll" id="apll">
             <br><br>
         </div>
         
         <div class="datos_profesor">
-            <label for="telP">Ingresar Teléfono:</label>
-            <input type="text" placeholder="Número" name="telP" id="telP">
+            <label for="tel">Ingresar Teléfono:</label>
+            <input type="text" placeholder="Número" name="tel" id="tel">
             <br><br>
         </div>
 
         <div class="datos_profesor">
-            <label for="emailP">Ingresar Email:</label>
-            <input type="text" placeholder="nombre@unid.com" name="emailP" id="emailP">
+            <label for="email">Ingresar Email:</label>
+            <input type="text" placeholder="nombre@unid.com" name="email" id="email">
             <br><br>
         </div>
 
         <div class="datos_profesor">
-            <label for="stsP">Ingresar Estatus:</label>
-            <input type="text" placeholder="estatus" name="stsP" id="stsP">
+            <label for="sts">Ingresar Estatus:</label>
+            <input type="text" placeholder="estatus" name="sts" id="sts">
             <br><br>
         </div>
         

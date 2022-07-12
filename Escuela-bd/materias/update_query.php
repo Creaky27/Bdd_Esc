@@ -2,7 +2,7 @@
 require_once("../Lib/functions.php");
  
 $ID = $_POST['ID'];
-$mat = $_POST['Materia'];
+$mat = $_POST['mat'];
 $cuat = $_POST['cuat'];
 $lic = $_POST['lic'];
 
