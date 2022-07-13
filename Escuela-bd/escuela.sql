@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-06-2022 a las 07:12:13
+-- Tiempo de generación: 13-07-2022 a las 03:32:27
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -31,24 +31,24 @@ CREATE TABLE `alumnos` (
   `ID` int(11) UNSIGNED NOT NULL,
   `Nombre` varchar(30) NOT NULL,
   `Apellido` varchar(30) NOT NULL,
-  `Teléfono` varchar(15) NOT NULL,
+  `Telefono` varchar(15) NOT NULL,
   `Email` varchar(20) DEFAULT NULL,
   `Licenciatura` char(20) DEFAULT NULL,
   `Cuatrimestre` varchar(20) DEFAULT NULL,
-  `STATUS` varchar(20) DEFAULT NULL
+  `Estatus` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `alumnos`
 --
 
-INSERT INTO `alumnos` (`ID`, `Nombre`, `Apellido`, `Teléfono`, `Email`, `Licenciatura`, `Cuatrimestre`, `STATUS`) VALUES
-(1, 'Karen', 'Guillen', '9984572651', 'karengg@unid.com', 'Ing. en Software', '6to', 'Activo'),
-(2, 'Gerardo', 'Casanova', '9984751289', 'gerardocc@unid.com', 'Ing. en Software', '6to', 'Activo'),
-(3, 'Augusto', 'Zamudio', '9984784587', 'augustozp@unid.com', 'Ing. en Software', '6to', 'Activo'),
-(4, 'Antonio', 'Luna', '9984755820', 'antoniola@unid.com', 'Ing. en Software', '6to', 'Activo'),
-(5, 'David', 'Villalobos', '9980017528', 'davidvs@unid.com', 'Ing. en Software', '6to', 'Activo'),
-(6, 'Manuel', 'Euan', '9986472514', 'manuelep@unid.com', 'Ing. en Software', '6to', 'Activo');
+INSERT INTO `alumnos` (`ID`, `Nombre`, `Apellido`, `Telefono`, `Email`, `Licenciatura`, `Cuatrimestre`, `Estatus`) VALUES
+(1, 'Gerardo', 'Casanova', '9985266331', 'gerardocc@unid.com', 'Ing. en Sistemas', 'sexto', 'Activo'),
+(2, 'Karen', 'Guillen', '9985264410', 'karengg@unid.com', 'Ing. en Sistemas', 'sexto', 'Activo'),
+(3, 'Augusto', 'Zamudio', '9985004189', 'augustozp@unid.com', 'Ing. en Sistemas', 'sexto', 'Activo'),
+(4, 'Antonio', 'Luna', '9987465034', 'antoniola@unid.com', 'Ing. en Sistemas', 'sexto', 'Activo'),
+(6, 'Juan', 'Manuel', '9987465501', 'juanmep@unid.com', 'Ing. en Sistemas', 'primero', 'sexto'),
+(8, 'Moana', 'Rivera', '9984200835', 'moanarp@unid.com', 'Ing. en Sistemas', 'sexto', 'Activa');
 
 -- --------------------------------------------------------
 
@@ -58,22 +58,24 @@ INSERT INTO `alumnos` (`ID`, `Nombre`, `Apellido`, `Teléfono`, `Email`, `Licenc
 
 CREATE TABLE `materias` (
   `ID` int(11) NOT NULL,
-  `Nombre_Materia` char(40) NOT NULL,
+  `Materia` char(40) NOT NULL,
   `Cuatrimestre` varchar(10) NOT NULL,
-  `Licenciatura` char(20) NOT NULL
+  `Licenciatura` char(20) NOT NULL,
+  `ESTATUS` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `materias`
 --
 
-INSERT INTO `materias` (`ID`, `Nombre_Materia`, `Cuatrimestre`, `Licenciatura`) VALUES
-(10, 'Diseño y Administración en Base de Datos', '6to', 'Ing. en Sistema'),
-(15, 'Diseño estructurado de algortimos', '1er', 'Ing. en Sistema'),
-(36, 'Programación estructurada', '5to', 'Ing. en Sistema'),
-(44, 'Gestión de Servidores', '6to', 'Ing. en Sistema'),
-(54, 'Seminario de Valores en lo común', '3er', 'Ing. en Sistema'),
-(80, 'Programación Orientada a Objetos', '6to', 'Ing. en Sistema');
+INSERT INTO `materias` (`ID`, `Materia`, `Cuatrimestre`, `Licenciatura`, `ESTATUS`) VALUES
+(10, 'Diseño y Administración en Base de Datos', '6to', 'Ing. en Sistema', '0'),
+(15, 'Diseño estructurado de algortimos', '1er', 'Ing. en Sistema', '0'),
+(21, 'Ortografia', 'cuarto', 'Ing. en Sistemas', ''),
+(36, 'Programación estructurada', '5to', 'Ing. en Sistema', '0'),
+(54, 'Seminario de Valores en lo común', '3er', 'Ing. en Sistema', '0'),
+(80, 'Programación Orientada a Objetos', '6to', 'Ing. en Sistema', '0'),
+(95, 'Comprensión lectora', 'cuarto', 'Ing. en Sistemas', '');
 
 -- --------------------------------------------------------
 
@@ -82,25 +84,25 @@ INSERT INTO `materias` (`ID`, `Nombre_Materia`, `Cuatrimestre`, `Licenciatura`) 
 --
 
 CREATE TABLE `profesores` (
-  `ID_prof` int(11) NOT NULL,
+  `ID` int(11) NOT NULL,
   `Nombre` varchar(20) NOT NULL,
   `Apellidos` varchar(20) NOT NULL,
-  `Teléfono` int(11) NOT NULL,
+  `Telefono` int(11) NOT NULL,
   `Email` varchar(20) NOT NULL,
-  `STATUS` int(11) NOT NULL
+  `ESTATUS` varchar(12) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `profesores`
 --
 
-INSERT INTO `profesores` (`ID_prof`, `Nombre`, `Apellidos`, `Teléfono`, `Email`, `STATUS`) VALUES
-(0, 'Moises', 'Ortega Zetina', 1231231231, 'moises01@unid.com', 1),
-(1, 'Abraham', 'Pech Pech', 2147483647, 'abraham02@unid.com', 0),
-(2, 'Pablo', 'Hipólito González ', 1594782365, 'pablo03@unid.com', 1),
-(3, 'Carlos', 'Carballo Ojeda', 2133410093, 'carlos04@unid.com', 0),
-(4, 'Alexander', 'Castillo Cervantes', 1254789633, 'alexander05@unid.com', 1),
-(5, 'Cristina', 'Castillejos Gómez ', 987342175, 'cristina06@unid.com', 0);
+INSERT INTO `profesores` (`ID`, `Nombre`, `Apellidos`, `Telefono`, `Email`, `ESTATUS`) VALUES
+(1, 'Moises', 'Ortega Zetina', 1231231231, 'moises01@unid.com', '1'),
+(2, 'Abraham', 'Pech Pech', 2147483647, 'abraham02@unid.com', '0'),
+(3, 'Pablo', 'Hipólito González ', 1594782365, 'pablo03@unid.com', '1'),
+(4, 'Carlos', 'Carballo Ojeda', 2133410093, 'carlos04@unid.com', '0'),
+(5, 'Alexander', 'Castillo Cervantes', 1254789633, 'alexander05@unid.com', '1'),
+(6, 'Cristina', 'Castillejos Gómez ', 987342175, 'cristina06@unid.com', '0');
 
 --
 -- Índices para tablas volcadas
@@ -110,7 +112,8 @@ INSERT INTO `profesores` (`ID_prof`, `Nombre`, `Apellidos`, `Teléfono`, `Email`
 -- Indices de la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `Email` (`Email`);
 
 --
 -- Indices de la tabla `materias`
@@ -122,7 +125,8 @@ ALTER TABLE `materias`
 -- Indices de la tabla `profesores`
 --
 ALTER TABLE `profesores`
-  ADD PRIMARY KEY (`ID_prof`);
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `Email` (`Email`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -133,6 +137,18 @@ ALTER TABLE `profesores`
 --
 ALTER TABLE `alumnos`
   MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de la tabla `materias`
+--
+ALTER TABLE `materias`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+
+--
+-- AUTO_INCREMENT de la tabla `profesores`
+--
+ALTER TABLE `profesores`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -17,12 +17,12 @@ function insertar_alumnos($name, $apll, $tel, $email, $lic, $cuat, $sts){
     global $connect;
     $consulta = "INSERT INTO alumnos (Nombre, Apellido, Telefono, Email, Licenciatura, Cuatrimestre, Estatus) values('$name', '$apll', '$tel','$email', '$lic', '$cuat', '$sts')";
     $resultado = mysqli_query($connect, $consulta);
-    if (!$resultado){
-        echo "¡No se inserto Alumno!";
+    if(empty($resultado)){
+        echo "¡No se agrego Alumno!";
     }    
     else {
-        echo "¡Se agrego al Alumno!";
-        header ("Location: index.php");
+        echo "¡Se agrego con exito!";
+        
     }
 }
 function update_alumnos($name, $apll, $tel, $email, $lic, $cuat, $sts, $ID){
