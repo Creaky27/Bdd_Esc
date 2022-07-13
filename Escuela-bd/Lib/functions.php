@@ -1,5 +1,6 @@
 <?php
 require_once("connect.php");
+
 //ALUMNOS
 function get_all_alumnos($connect){
     $consulta = "SELECT * FROM alumnos";
@@ -12,11 +13,17 @@ function get_alumno($connect,$ID){
     return $resultado;
 }
 //FORMULARIO alumnos
-function insertar_alumnos($name, $apll, $tel, $email, $cuat, $sts){
+function insertar_alumnos($name, $apll, $tel, $email, $lic, $cuat, $sts){
     global $connect;
     $consulta = "INSERT INTO alumnos (Nombre, Apellido, Telefono, Email, Licenciatura, Cuatrimestre, Estatus) values('$name', '$apll', '$tel','$email', '$lic', '$cuat', '$sts')";
     $resultado = mysqli_query($connect, $consulta);
-    //return $resultado)
+    if (!$resultado){
+        echo "¡No se inserto Alumno!";
+    }    
+    else {
+        echo "¡Se agrego al Alumno!";
+        header ("Location: index.php");
+    }
 }
 function update_alumnos($name, $apll, $tel, $email, $lic, $cuat, $sts, $ID){
     global $connect;
@@ -28,6 +35,7 @@ function delete_alumnos($ID){
     $consulta = "DELETE FROM alumnos WHERE ID= $ID";
     $resultado = mysqli_query($connect, $consulta);
 }
+
 //MATERIAS
 function get_all_materias($connect){
     $consulta = "SELECT * FROM materias";
@@ -56,6 +64,7 @@ function delete_materias($ID){
     $consulta = "DELETE FROM materias WHERE ID= $ID";
     $resultado = mysqli_query($connect, $consulta);
 }
+
 //PROFESORES
 function get_all_profesores($connect){
     $consulta = "SELECT * FROM profesores";
